@@ -232,6 +232,7 @@ arrayForForEach.forEach(functionForArray);
 
 arrayForForEach.forEach((value)=>console.log(value)) //it's also working;
 
+
 let arr7  = document.querySelector("#arr7");
 
 arr7.innerHTML = arrayForForEach;
@@ -314,6 +315,94 @@ console.log(anyNumbers.reverse());
 console.log(anyNumbers.sort());
 console.log(numbersInString.sort());
 console.log(anyNumbers.reverse());
+
+const numbersForSortFunctiion = [67,34,33,23,2,4];
+console.log(numbersForSortFunctiion.sort(function(a,b){
+    return a - b;
+}));
+
+
+//for heighest number and lowest number;
+Math.max.apply(null, [33,43,43,4,54,34,34,223,56]);
+Math.min.apply(null, [33,43,43,4,54,34,34,223,56]);
+
+
+const objInArr = [
+    {fName: `Labib`, lName: `irfan`, born: 2020},
+    {fName: `Rashed`, lName: `Abdullah`, born: 1999},
+    {fName: `ismat`, lName: `Noman`, born: 2023},
+]
+console.log(objInArr);
+console.log(objInArr.sort((a,b)=>{return a.born - b.born}));
+
+objInArr.sort(function(a, b){
+    let x = a.fName.toLowerCase();
+    let y = b.fName.toLowerCase();
+    
+    if(x < y){return -1}
+    if(x > y){return 1}
+
+    return - 0;
+});
+console.log(objInArr);
+
+
+const newforEach = [`Dawra`, `Mishkat`, `Jalalain`, `Shorhe beqaya`, `kafia`];
+
+newforEach.forEach((value)=>{console.log(value)});
+
+console.log(`------`);
+
+function fncforEachprmtr(value, index, array){
+    console.log(value);
+    console.log(index);
+    console.log(array);
+
+    console.log(`end of forEach`);
+}
+
+newforEach.forEach(fncforEachprmtr);
+
+
+//map:
+console.log(`map`)
+
+const forMap = [10,30,10,20];
+
+function fncforMap(value){
+    return value * 2;
+}
+
+const rejultofMap = forMap.map(fncforMap);
+
+console.log(rejultofMap);
+
+
+// filter:
+console.log(`filter`)
+
+const forfilter = [23,32,23,20,32,12,45,32];
+
+function fncforfilter(value){
+    return value < 30;
+}
+
+const filterrezult = forfilter.filter(fncforfilter);
+
+console.log(filterrezult);
+
+//reduce:
+console.log(`reduce`);
+
+const reduceArr = [22,18,15,15,10,20];
+
+function reduceFnc(totalofArr, value, index, array){
+    return totalofArr + index;
+}
+
+const rezultofreduce = reduceArr.reduce(reduceFnc);
+
+console.log(rezultofreduce);
 
 
 //Go to "Spread.js" for more array methods;
