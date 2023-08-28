@@ -397,12 +397,77 @@ console.log(`reduce`);
 const reduceArr = [22,18,15,15,10,20];
 
 function reduceFnc(totalofArr, value, index, array){
-    return totalofArr + index;
+    console.log(totalofArr)
+    console.log(`____`)
+    return totalofArr + value;
 }
 
 const rezultofreduce = reduceArr.reduce(reduceFnc);
 
 console.log(rezultofreduce);
+
+//reduceRight():
+
+console.log(`Reduce Right`);
+
+const rightReduce = [22,18,15,15,10,20];
+
+function reduceRightFnc(totalRight, value, index, array){
+    console.log(totalRight);
+    console.log(`____`);
+    return totalRight + value;
+}
+
+const rezultofreduceRight = rightReduce.reduceRight(reduceRightFnc);
+
+console.log(rezultofreduceRight);
+
+
+//every():
+console.log(`every (return 'true' of 'false')`);
+
+const everyArr = [23,4,54,65,34,33];
+
+function everyFnc(value, index, array){
+    return value > 4;
+}
+
+const rezultOfEvery = everyArr.every(everyFnc);
+
+console.log(rezultOfEvery);
+
+
+
+console.log(`some (return 'true' or 'false')`);
+
+const someArr = [23,4,54,65,34,33];
+
+function someFnc(value, index, array){
+    return value < 5;
+}
+
+const rezultofSome = someArr.some(someFnc);
+console.log(rezultofSome);
+
+
+// indexOf
+console.log(`indedOf`);
+
+const indexOfArr = [`Hello`, `MyName`, `Labib`];
+
+const rzltIndexOf = indexOfArr.indexOf(`Labib`) + 1;
+
+console.log(rzltIndexOf);
+
+
+//Array.from;
+console.log(`Array.from`);
+
+console.log(Array.from(`আমার নাম লাবিব ইরফান`));
+console.log(Array.from(`Labib`));
+
+
+
 
 
 //Go to "Spread.js" for more array methods;
