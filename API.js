@@ -11,4 +11,4 @@ function valitation(){
         validMsg.innerHTML = validInput.validationMessage;
 
     }
-}
+};
