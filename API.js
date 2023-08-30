@@ -106,4 +106,73 @@ function stopWorker(){
     }
 }
 
-//  (it's finally working, but somthing i desnt understand);
+//  (it's finally working, but somthing i desn't understand);
+
+
+
+// Petch API:
+
+const displayFetch = document.querySelector(`.displayFetch`);
+
+console.log(`it's Async`)
+function getData(){
+    fetch(`http://127.0.0.1:5500/notes.txt`)
+    .then((response) => response.text())
+    .then(data => {
+        //example of Async;
+        console.log(`Hello world 1`);
+        displayFetch.innerHTML = data});
+
+    console.log(`Hello world 2`)
+}
+
+
+
+const displayFetchAwait = document.querySelector(`.displayFetchAwait`);
+
+console.log(`it's Async`)
+async function getDataAwait(){
+    const responseAwait = await fetch(`http://127.0.0.1:5500/notes.txt`);
+    const dataAwait = await responseAwait.text();
+
+    displayFetchAwait.innerHTML = dataAwait;
+}
+
+
+
+// GeoLocation API:
+const displayLocation = document.querySelector(`.displayLocation`);
+
+function myLocation(){
+    if(navigator.geolocation){
+        //if we want to move my position with my laptop/phone moving, we need to use "watchPosition" in place of "getCurrentPosition"
+        navigator.geolocation.getCurrentPosition(myPosition, showUserError);
+        // navigator.geolocation.watchPosition(myPosition, showUserError);
+    } else {
+        displayLocation.innerHTML = `Sorry bos! your browser dosent support geolocation`;
+    }
+}
+
+//show position (latitude and longitude);
+function myPosition(position){
+    displayLocation.innerHTML = `My Latitude is ${position.coords.latitude} </br>My Longitude is ${position.coords.longitude}`
+}
+
+
+//show error to user:
+function showUserError(error) {
+    switch(error.code) {
+      case error.PERMISSION_DENIED:
+        displayLocation.innerHTML = "if you want to buy somthig, please allow your location."
+        break;
+      case error.POSITION_UNAVAILABLE:
+        displayLocation.innerHTML = "Location information is unavailable."
+        break;
+      case error.TIMEOUT:
+        displayLocation.innerHTML = "The request to get user location timed out."
+        break;
+      case error.UNKNOWN_ERROR:
+        displayLocation.innerHTML = "An unknown error occurred."
+        break;
+    }
+  }
