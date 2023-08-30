@@ -118,13 +118,25 @@ console.log(`it's Async`)
 function getData(){
     fetch(`http://127.0.0.1:5500/notes.txt`)
     .then((response) => response.text())
-    .then(data => {
+    .then((data) => {
         //example of Async;
         console.log(`Hello world 1`);
         displayFetch.innerHTML = data});
 
     console.log(`Hello world 2`)
 }
+
+
+function fetchData(){
+    fetch(`http://127.0.0.1:5500/notes.txt`)
+    .then((data)=>{data})
+    .then((showData)=>{
+        console.log(`Async of fetch data 1`)
+        showData})
+        console.log(`Async of fetch data 2`)
+}
+
+fetchData();
 
 
 
