@@ -405,8 +405,8 @@ objInArr.sort(function(a, b){
     let x = a.fName.toLowerCase();
     let y = b.fName.toLowerCase();
     
-    if(x < y){return -1}
-    if(x > y){return 1}
+    if(x < y){return -1};
+    if(x > y){return 1};
 
     return - 0;
 });
@@ -417,7 +417,7 @@ const newforEach = [`Dawra`, `Mishkat`, `Jalalain`, `Shorhe beqaya`, `kafia`];
 
 newforEach.forEach((value)=>{console.log(value)});
 
-console.log(`------`);
+console.log(`_____`);
 
 function fncforEachprmtr(value, index, array){
     console.log(value);
@@ -442,6 +442,34 @@ function fncforMap(value){
 const rejultofMap = forMap.map(fncforMap);
 
 console.log(rejultofMap);
+
+const mapPractice = [12,23,54,34,55];
+
+function mapFunc(value){
+    return value + 1;
+}
+
+const mapReuslt = mapPractice.map(mapFunc);
+console.log(mapReuslt);
+
+
+function mapFunc2(value){
+    const inHTML = document.querySelector(`.inHTML`);
+    return inHTML.innerHTML = `i hava a value, and this value is ${value + 2}`
+    // only last one (57) printed; (what's the resion);
+}
+const mapResult2 = mapPractice.map(mapFunc2);
+console.log(mapResult2);
+
+const mapArr = [`Labib`, `Irfan`, `Ismat`, `Maymuna`];
+
+function arrFuncMap(value){
+    return value + ` Mr.`
+}
+
+const resultArr = mapArr.map(arrFuncMap);
+const inHTML2 = document.querySelector(`.inHTML2`);
+inHTML2.innerHTML = resultArr; // it's Working good;
 
 
 // filter:
