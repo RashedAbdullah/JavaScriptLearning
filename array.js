@@ -258,12 +258,26 @@ const arrayForForEach = [`Sahihul bukhari`, `Sahihu muslim`, `Sunanut tirmiji`, 
 function functionForArray(value){
     let arr6 = document.querySelector("#arr6");
     arr6.innerHTML = value; //why printed last one only, i don't know;
-    console.log(value);
+    console.log(value); // it's good working;
 }
 
 arrayForForEach.forEach(functionForArray);
 
 arrayForForEach.forEach((value)=>console.log(value)) //it's also working;
+
+
+const cousins = [`Noman`, `ifran`, `Mamaun`, `Mahmud`, `Faruque`, `imadad`, `Shakil`, `Rashed`, `Anayetullah`];
+
+function cousinsFunc(value){
+    console.log(value);
+}
+cousins.forEach(cousinsFunc);
+
+function csnFunc(value){
+    console.log(`One of cousins ${value}`)
+}
+
+cousins.forEach(csnFunc);
 
 
 let arr7  = document.querySelector("#arr7");
@@ -287,25 +301,37 @@ console.log(arrayPesron);
 let arr8 = document.querySelector('#arr8');
 arr8.innerHTML = arrayPesron;
 
+const moreAssociative = [];
+moreAssociative[`name`] = `Anayetullah`;
+moreAssociative[`age`] = 20;
+moreAssociative[`Profession`] = `Student`;
+
+console.log(moreAssociative);
+
 
 const arraylengthNew = new Array(40);
 const arraylength = [40];
-console.log(arraylength);
-console.log(arraylengthNew);
+console.log(arraylength); //length: 1;
+console.log(arraylengthNew); //length: 40;
 
 //for check array or object;
-console.log(Array.isArray(arraylength));
+console.log(Array.isArray(arraylength)); //true;
 console.log(arraylength instanceof Array); //true;
 
+// console.log(arr instanceof Object);
+// console.log(allStdnts instanceof Array);
+// console.log(arr);
+// (don't know how working);
 
 //Array to String;
-const arrayForToString = [`ArrayToString`, 24, `AndMoreThan`]
-console.log(arrayForToString.toString())
+const arrayForToString = [`ArrayToString`, 24, `AndMoreThan`];
+console.log(arrayForToString.toString());
 
 //To join array;
 console.log(arrayForToString.join(`*`));
 console.log(arrayForToString.join(` * `));
 console.log(arrayForToString.join(` | `));
+console.log(arrayForToString.join()); //(Like toString);
 
 //For delete a element;
 delete arrayForToString[2];
@@ -322,6 +348,9 @@ console.log(afterConcat1);
 
 const afterConcat2 = concat1.concat(`Labib`, `Rashed`);
 console.log(afterConcat2);
+
+const concated = concat2.concat(`ismat`, `Bushra`, `Maymuna`);
+console.log(concated);
 
 
 //slice:
@@ -359,11 +388,15 @@ console.log(numbersForSortFunctiion.sort(function(a,b){
 Math.max.apply(null, [33,43,43,4,54,34,34,223,56]);
 Math.min.apply(null, [33,43,43,4,54,34,34,223,56]);
 
+arrforHeightandLowestNum = [34,45,43,556,5434,34];
+const result = Math.max.apply(null, arrforHeightandLowestNum);
+console.log(result); //it's good working;
+
 
 const objInArr = [
     {fName: `Labib`, lName: `irfan`, born: 2020},
     {fName: `Rashed`, lName: `Abdullah`, born: 1999},
-    {fName: `ismat`, lName: `Noman`, born: 2023},
+    {fName: `ismat`, lName: `Noman`, born: 2023}
 ]
 console.log(objInArr);
 console.log(objInArr.sort((a,b)=>{return a.born - b.born}));
@@ -377,7 +410,7 @@ objInArr.sort(function(a, b){
 
     return - 0;
 });
-console.log(objInArr);
+console.log(objInArr); //maybe i cannot understood;
 
 
 const newforEach = [`Dawra`, `Mishkat`, `Jalalain`, `Shorhe beqaya`, `kafia`];
@@ -496,7 +529,7 @@ console.log(rzltIndexOf);
 //Array.from;
 console.log(`Array.from`);
 
-console.log(Array.from(`আমার নাম লাবিব ইরফান`));
+console.log(Array.from(`লাবিব ইরফান`));
 console.log(Array.from(`Labib`));
 
 
