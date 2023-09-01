@@ -456,7 +456,7 @@ console.log(mapReuslt);
 function mapFunc2(value){
     const inHTML = document.querySelector(`.inHTML`);
     return inHTML.innerHTML = `i hava a value, and this value is ${value + 2}`
-    // only last one (57) printed; (what's the resion);
+    // only last one (57) printed; (what's the resion); (i have resion);
 }
 const mapResult2 = mapPractice.map(mapFunc2);
 console.log(mapResult2);
@@ -473,7 +473,7 @@ inHTML2.innerHTML = resultArr; // it's Working good;
 
 
 // filter:
-console.log(`filter`)
+console.log(`filter is here`)
 
 const forfilter = [23,32,23,20,32,12,45,32];
 
@@ -485,24 +485,53 @@ const filterrezult = forfilter.filter(fncforfilter);
 
 console.log(filterrezult);
 
+
+const newFilter = [`Birth`, `Live`, `Life`, `Love`, `Death`];
+
+function filterFnc(value){
+    return value === `Live`;
+}
+
+const resultFilter = newFilter.filter(filterFnc);
+console.log(resultFilter);
+
+const moreFilter = [32,43,54,3,54,43,44,54,32,65,78,23];
+
+function moreFilterFunc(value){
+    return value <50;
+}
+const resultMoreFilter = moreFilter.filter(moreFilterFunc);
+
+const filter1 = document.querySelector(`.filter1`);
+
+filter1.innerHTML = resultMoreFilter; //it's also good working;
+
 //reduce:
-console.log(`reduce`);
+console.log(`reduce is here`);
 
 const reduceArr = [22,18,15,15,10,20];
 
-function reduceFnc(totalofArr, value, index, array){
-    console.log(totalofArr)
+function reduceFnc(total, value, index, array){
+    console.log(total)
     console.log(`____`)
-    return totalofArr + value;
+    return total + value;
 }
 
 const rezultofreduce = reduceArr.reduce(reduceFnc);
 
 console.log(rezultofreduce);
 
+const reduceStr = [`Fatima`, `Humayra`, `Maliha`, `Naima`];
+
+function reduceStrFunc(total, value, index, array){
+    return total + value;
+}
+const reduceResult = reduceStr.reduce(reduceStrFunc);
+console.log(reduceResult);
+
 //reduceRight():
 
-console.log(`Reduce Right`);
+console.log(`reduceRight is here`);
 
 const rightReduce = [22,18,15,15,10,20];
 
@@ -511,13 +540,13 @@ function reduceRightFnc(totalRight, value, index, array){
     console.log(`____`);
     return totalRight + value;
 }
-
+//  All are same, but that's will countet from right;
 const rezultofreduceRight = rightReduce.reduceRight(reduceRightFnc);
 
 console.log(rezultofreduceRight);
 
 
-//every():
+//every(): return true of false;
 console.log(`every (return 'true' of 'false')`);
 
 const everyArr = [23,4,54,65,34,33];
@@ -531,7 +560,7 @@ const rezultOfEvery = everyArr.every(everyFnc);
 console.log(rezultOfEvery);
 
 
-
+//some return true of false;
 console.log(`some (return 'true' or 'false')`);
 
 const someArr = [23,4,54,65,34,33];
@@ -545,7 +574,7 @@ console.log(rezultofSome);
 
 
 // indexOf
-console.log(`indedOf`);
+console.log(`indexOf is here`);
 
 const indexOfArr = [`Hello`, `MyName`, `Labib`];
 
@@ -555,7 +584,7 @@ console.log(rzltIndexOf);
 
 
 //Array.from;
-console.log(`Array.from`);
+console.log(`Array.from is here`);
 
 console.log(Array.from(`লাবিব ইরফান`));
 console.log(Array.from(`Labib`));
