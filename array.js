@@ -35,6 +35,20 @@ for(let i =0; i < allStdnts; i++){
     console.log(`My Classmate is: ${students[i]}`);
 }
 
+console.log(`New Practice`);
+
+const arrForPractice = [`monkey`, `sparrot`, `cow`, `animal`];
+
+for(i = 0; i < arrForPractice.length; i++) {
+    console.log(`Name of animal is: ${arrForPractice[i]}`);
+}
+
+const arrforPractice2 = [`World`, `Word`, `Between`, `Around`];
+
+for(i = 0; i < arrforPractice2.length; i++) {
+    console.log(`i learned new word: ${arrforPractice2[i]}`);
+}
+
 
 
 
@@ -133,10 +147,19 @@ console.log(myProfession);
 console.log(myAge);
 
 
+const Anayetullah = [`Anayetullah`, `Stundet`, `Jamia islamia pathiya`, 20];
+
+const [NameOfMe, MypresentProfession, MyStudy, AgeOfMe] = Anayetullah;
+
+console.log(AgeOfMe); //20
+console.log(NameOfMe); //Anayetullah
+console.log(MyStudy); //Jamia islamia pathiya
 
 
 
-//To covert nodeList to array;
+
+
+//To covert nodeList to array; (Still now i dosen't know about this);
 
 //ES5
 const nodeToArr = Array.prototype.slice.call(NodeList);
@@ -160,7 +183,7 @@ for(var i = 0; i < arrlnth; i++) {
 }
 
 
-//ES6; (for of)
+//ES6; (for of)  (Still it's cannot working; i don't know why)?
 for(const i of arr) {
     console.log(`Go looping in ES6: ${arr[i]}`);
     if(i === 5) break;
@@ -171,6 +194,12 @@ console.log(arr6)
 
 for(const i of arr6) {
     console.log(`All class of malibagh jamia ${arr6[i]}`);
+}
+
+const loopInArr = [`Anayetullah`, `Amdadullah`, `Salma`, `Mahadi`, `Salman`];
+
+for(i of loopInArr){
+    console.log(`Name is: ${loopInArr[i]}`);
 }
 
 
@@ -197,6 +226,10 @@ console.log(numbers[fndNumber.indexOf(true)]); //76
 console.log(numbers.findIndex(number => number === 76));   //4
 
 console.log(numbers.findIndex(number => number === 67));   //2
+
+const findIndexForPractice = [32,44,23,544,32,54];
+const findedindex = findIndexForPractice.findIndex(indexNumber => indexNumber === 54);
+console.log(findedindex);
 
 
 
