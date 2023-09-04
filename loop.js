@@ -8,8 +8,8 @@ break
 continue
 */
 
-for(let i = 1; i <= 10; i ++) {
-    console.log("Apple market value right now " + i)
+for(let i = 1; i <= 10; i++) {
+    console.log("Apple market value right now" + i)
 }
 
 
@@ -30,7 +30,13 @@ do {
     console.log("thats all of students of this jamia")
 }
 
-
+let backAgain = 1;
+// do{
+//     console.log(`My Number is right now ${backAgain}`);
+//     backAgain++;
+// } while (backAgain < 14) {
+//     console.log(`Hello World! ${backAgain}`);
+// }
 
 let Numbers = 15;
 while(Numbers < 14){
