@@ -7,11 +7,20 @@ console.log(`Map, it's not a syntactic sugar`);
 
 
 //new Map;
-const newMap = new Map();
-console.log(newMap);
+const newMapCreate = new Map([
+    [`myName`, `Rashed Abdullah`],
+    [`myFather`, `Mowlana Abdullah`],
+    [`myMother`, `Rabea Akter`]]);
+
+console.log(newMapCreate);
+
+
 
 
 //for input a value in Map  =  set:
+const newMap = new Map();
+console.log(newMap);
+
 newMap.set(`Full Name`, `Labib irfan`);  //Map(1) {'Full Name' => 'Labib irfan'}
 console.log(newMap);
 newMap.set(`Nephew`, `Rashed Abdullah`); //Map(2) {'Full Name' => 'Labib irfan', 'Nephew' => 'Rashed Abdullah'}
