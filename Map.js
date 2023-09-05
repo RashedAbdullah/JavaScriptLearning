@@ -4,6 +4,8 @@ console.log(`Map, it's not a syntactic sugar`);
 
 //Map is a new data structor; not map who method of array; Map can accept function, boolean, intejer, charactar or string, anything of data;
 
+// and in object 'key' allways 'string', but in Map 'key' can number, string and others;
+
 
 
 //new Map;
