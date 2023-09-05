@@ -129,6 +129,7 @@ for(i of objforof){
 
 
 
+//while;
 
 let Numbers = 1;
 while(Numbers < 14){
@@ -137,12 +138,25 @@ while(Numbers < 14){
 }
 console.log("get out of the while loop");
 
+let someNumForWhile = 5;
+while(someNumForWhile <10){
+    console.log(`somthing added ${someNumForWhile}`);
+    someNumForWhile++;
+}
+
+console.log(`Out of someNumForWhile`)
 
 
 
+// do while:
 
-
-
+let someNumForDoWhile = 5;
+do{
+    console.log(`somthing added for do while ${someNumForDoWhile}`);
+    someNumForDoWhile++;
+} while(someNumForDoWhile <10){
+    
+}
 
 
 
@@ -150,8 +164,9 @@ let marketValue = 11;
 do {
     console.log("samsung market value right now " + marketValue);
     marketValue ++;
-} while (marketValue <= 20) {
-    console.log("Market value is over " + marketValue)
+} while (marketValue <= 15) {
+    console.log("Market value is over " + marketValue) //16
+    console.log("Market value is over " + marketValue) //16
 }
 
 
@@ -159,7 +174,7 @@ let allStudent = 1;
 do {
     console.log("Over all student of this jamia " + allStudent);
     allStudent ++;
-} while (allStudent <= 30) {
+} while (allStudent <= 7) {
     console.log("thats all of students of this jamia")
 }
 
