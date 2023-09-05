@@ -54,6 +54,28 @@ for(i = 10; ;i --){
 
 
 
+//break;
+for (let i = 1; i < 10; i ++) {
+    if(i === 5) {
+        break;
+    }
+    console.log("i will broken when called break;" + i)
+}
+
+
+//continue;
+for(i = 1; i < 10; i++) {
+    if(i === 4) {
+        continue;
+    }
+    console.log('i will skip the number who called by continue' + i)
+}
+
+
+
+
+
+
 
 
 //for in: (for boject);
@@ -91,7 +113,29 @@ for(i of someArr){
     console.log(someArr[i]); //undefined;
 }
 
+const rsd = `Rashed`;
+for(i of rsd){
+    console.log(i); //it's working; couse it's iterable;
+}
 
+/* const objforof = {name: `Rashed`, father: `Abdullah`, mother: `Rabea akter`};
+for(i of objforof){
+    console.log(objforof[i]);
+} */
+         // it's not working; couse it's not iterable;
+
+
+
+
+
+
+
+let Numbers = 1;
+while(Numbers < 14){
+    console.log("that's numner of " + Numbers)
+    Numbers ++;
+}
+console.log("get out of the while loop");
 
 
 
@@ -126,28 +170,3 @@ let backAgain = 1;
 // } while (backAgain < 14) {
 //     console.log(`Hello World! ${backAgain}`);
 // }
-
-let Numbers = 15;
-while(Numbers < 14){
-    console.log("that's numner of " + Numbers)
-    Numbers ++;
-}
-console.log("get out of the while loop");
-
-
-//break;
-for (let i = 1; i < 10; i ++) {
-    if(i === 5) {
-        break;
-    }
-    console.log("i will broken when called break;" + i)
-}
-
-
-//continue;
-for(i = 1; i < 10; i++) {
-    if(i === 4) {
-        continue;
-    }
-    console.log('i will skip the number who called by continue' + i)
-}
