@@ -8,9 +8,98 @@ break
 continue
 */
 
+
+// for:
+
 for(let i = 1; i <= 10; i++) {
     console.log("Apple market value right now" + i)
 }
+
+
+//we can make multiple statement; (mutliple varible in loop; (like here 'i' 'j'));
+const someName = [`Labib`, `ismat`, `Rashed`, `Khalid`];
+//    statement area
+for(let i = 0, j = someName.length; i < j; i++){
+    console.log(someName[i]);
+};
+
+
+//We can decleare loop like this;
+let i = 0;
+let j = someName.length;
+for(; i < j; i++){
+    console.log(someName[i])
+};
+
+let k = 0;
+for(; ; k++){
+    if(k == 11){
+        break;
+    } else {
+        console.log(k)
+    }
+}
+
+// --;
+
+for(i = 10; ;i --){
+    if(i == 0){
+        break;
+    }
+    console.log(i);
+}
+
+
+
+
+
+
+
+
+//for in: (for boject);
+
+
+const lbb = {fName: `Labib`, lName: `irfan`, age: 3};
+
+for(let i in lbb){
+    document.querySelector(`.forIn`).innerHTML = lbb[i];
+    console.log(i); //key
+    console.log(lbb[i]); //value of objcet;
+    console.log(`--`)
+}
+
+//'for in' not recommned for array;
+const someNum = [23,43,54,34,22];
+
+for(i in someNum){
+    console.log(i); //index number;
+    console.log(someNum[i]); //value of array;
+    console.log(`--`);
+}
+//for array, 'for of' or 'forEach';
+someNum.forEach((value, index)=>{console.log(index, value)});
+
+
+
+
+
+// 'for of'
+const someArr = [`Shahin afridi`, `Haris rouf`, `Naseem shah`, `Babar azam`];
+
+for(i of someArr){
+    console.log(i); //value;
+    console.log(someArr[i]); //undefined;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 let marketValue = 11;
