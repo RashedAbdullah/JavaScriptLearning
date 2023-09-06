@@ -1,5 +1,7 @@
-console.log("Object start now");
+console.log("Object is here");
 
+
+//declearing object:
 const rashed = {
     fullName: "Rashed Abdullah",
     father: "Mawlana Abdullah",
@@ -62,14 +64,14 @@ console.log(names.allName[0]);
 const objInArr = [
     "Ahmad Abdullah",
     {
-        Name: "Mhummad", age: 7, fother: "yahya"
+        Name: "Mhummad", age: 7, father: "yahya"
     },
     "Abida sultana umama"
 ]
 console.log(objInArr);
 
-//to acces item;
-console.log(objInArr[1].fother);
+//to acces item:
+console.log(objInArr[1].father);
 console.log(objInArr[1].age);
 
 

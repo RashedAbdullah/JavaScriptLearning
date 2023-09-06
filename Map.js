@@ -71,10 +71,10 @@ console.log(`___________`);
 //for of:
 for(let [key, value] of lbb.entries()){
     console.log(`${key}: ${value}`);
-}
+};
 
 
 //for in:
 for(i in lbb){
     console.log(lbb[i]);  //Brwoser totally ignoring this;
-}
+};
