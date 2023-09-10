@@ -1,4 +1,4 @@
-console.log(this);
+console.log(`'this' is here`);
 
 //gloal (this); (window)
 //and vlaue of this same in strict mode or non strict mode;
@@ -14,7 +14,7 @@ thisFunc();  //global object (window);
 
 //in stric mode;
 function inStrict(){
-    'use strict';
+    "use strict";
     console.log(this);
 }
 inStrict(); //undefined;
@@ -23,9 +23,9 @@ inStrict(); //undefined;
 function accidental(){
     this.names = "Rashed Abdullah";
 }
-console.log(accidental());
+console.log(accidental()); //undefined;
 console.log(names); //Rashed Abdullah;
-//couse "this" is globla object, so "names" also global; so when i call "names" outside of functition or inside of function, it's will work; but when under "use strict mode" it's cannot work;
+//couse "this" is globla object, so "names" also global; so when i call "names" outside of functition or inside of function, it's will work; but when be under "strict mode" it's cannot work;
 
 
 
@@ -38,7 +38,7 @@ const thisObj = {
         console.log(this.Fname + " " + this.Lname);
     }
 }
-thisObj.fullName();
+thisObj.fullName(); //Labib irfan
 
 //object in object;
 const prntObj = {
@@ -55,9 +55,9 @@ const prntObj = {
         }
     }
 }
-prntObj.address.fullAddress();
+prntObj.address.fullAddress(); //Sonagazi, Feni, Bangladesh;
 //call
-prntObj.address.fullAddress.call(prntObj);
+prntObj.address.fullAddress.call(prntObj); //Dhaka, Bangladesh Riyadh, Soudi Arabia;
 
 
 
@@ -83,14 +83,14 @@ const LbbBorn = {
     dob: 2020
 }
 
-myBorn.age(2023) //24
-myBorn.age.call(LbbBorn, 2023) //3
+myBorn.age(2023) //Rashed Abdullah is 24 Year Old;
+myBorn.age.call(LbbBorn, 2023) //Labib irfan is 3 Year Old;
 
 
 //apply;
 const aboutMe = {
     name: "Rashed Abdullah",
-    father: "Mawlana Abdullah",
+    father: "Abdullah",
     oneMore: {
         name: "Labib irfan",
         father: "M A H irfan",
@@ -100,8 +100,8 @@ const aboutMe = {
     }
 }
 
-aboutMe.oneMore.overAll();
-aboutMe.oneMore.overAll.apply(aboutMe);
+aboutMe.oneMore.overAll(); //My name is: Labib irfan and my father is: M A H irfan;
+aboutMe.oneMore.overAll.apply(aboutMe); //My name is: Rashed Abdullah and my father is: Abdullah
 
 //second argument of apply a array;
 const lbb = {
@@ -111,20 +111,20 @@ const lbb = {
         console.log(`${msg} ${this.name} is ${thisYear - this.born} year old!`)
     }
 }
-lbb.age(2023, `Hello my family! `)
+lbb.age(2023, `Hello my family!`); //ello my family! Labib irfan is 3 year old!
 
 const ismat = {
     name: `ismat maymuna`,
     born: 2022
 }
 
-let one = lbb.age.apply(ismat, [2023, `Hello Rashed!`]);
+let one = lbb.age.apply(ismat, [2023, `Hello Rashed!`]); //Hello Rashed! ismat maymuna is 1 year old!;
 
 
 //bind;
 const saad = {
     name: `Saad Rayhan`,
-    job: `Techer`,
+    job: `Teacher`,
     anotherOne: {
         name: `Salman`,
         job: `Student`,
@@ -133,6 +133,6 @@ const saad = {
         }
     }
 }
-let saadSalman = saad.anotherOne.value.bind(saad);
+let saadSalman = saad.anotherOne.value.bind(saad); 
 
-saadSalman();  //best usefull;
+saadSalman(); //my Name is Saad Rayhan and i'm a Teacher;
