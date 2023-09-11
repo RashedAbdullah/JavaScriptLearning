@@ -97,18 +97,18 @@ class OurFamily {
         this.profession = profession;
     }
 
-    comment(){
-        console.log(`${this.name} is my family member`);
+    comment(status){
+        console.log(`${this.name} is my family member ${status}`);
     }
 }
 
 const noman = new OurFamily(`Noman`, 35, `Businessman`);
 const irfan = new OurFamily(`irfan`, 32, `Businessman`);
 console.log(noman.profession); //Businessman
-noman.comment(`as a my big brother`); //Noman is my family member
-irfan.comment(`as a second big brother`); //irfan is my family member
+noman.comment("as a my big brother"); //Noman is my family member as a my big brother
+irfan.comment(`as a second big brother`); //irfan is my family member as a second big brother
 
-//calss statement and expression both are not hoisting;
+//class statement and expression both are not hoisting;
 
 
 //Prototyoe based inheritance (calss):
