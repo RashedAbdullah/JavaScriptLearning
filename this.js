@@ -136,3 +136,12 @@ const saad = {
 let saadSalman = saad.anotherOne.value.bind(saad); 
 
 saadSalman(); //my Name is Saad Rayhan and i'm a Teacher;
+
+
+// 'this' in event:
+
+let thisEvent = document.querySelector(`.thisEvent`);
+thisEvent.addEventListener(`click`,()=>{
+    console.log(`Hello world!`);
+    //<button class="thisEvent" onclick="this.style.color='red'">hello</button>
+})
