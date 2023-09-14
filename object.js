@@ -416,6 +416,17 @@ labibIfan.mother = `Maria`;
 console.log(labibIfan); //Student {Name: 'Labib', age: 3, classNo: 'Class One', mother: 'Maria'}
 
 
+//for default parameter:
+function FuncConstructor(fName, lName){
+    this.fName = fName;
+    this.lNmae = `Abdullah`;
+}
+const rsdfl = new FuncConstructor(`Rashed`);
+const frq = new FuncConstructor(`Faruque`);
+console.log(rsdfl); //FuncConstructor {fName: 'Rashed', lNmae: 'Abdullah'}
+console.log(frq); //FuncConstructor {fName: 'Faruque', lNmae: 'Abdullah'}
+
+
 // Built-in JS constructor:
 const newString = new String();
 const newNumber = new Number();
@@ -423,4 +434,10 @@ const newBoolean = new Boolean();
 const newObj = new Object();
 const newArr = new Array();
 const newDate = new Date();
+const newRegExp = new RegExp();
 // and more...
+// ('Math()' not a construction function);
+
+
+
+// JavaScript is prototype baset language, no class baset like ohters;
