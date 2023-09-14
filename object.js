@@ -27,7 +27,10 @@ rashed3.father = `Mawlana abdullah`;
 const rashed4 = rashed;
 console.log(rashed.address); //feni, bangladesh
 rashed4.address = `Dhaka, Bangladesh`;
-console.log(rashed.address); //Dhaka, Bangladesh; (changed original value)
+console.log(rashed.address); //Dhaka, Bangladesh; (changed original value);
+
+
+// in object order dosen't important, but in array order is very important;
 
 
 
@@ -38,6 +41,12 @@ console.log(rashed.fullName); //Rashed Abdullah
 console.log(rashed.age); //23
 console.log(rashed["address"]); //feni, bangladesh
 console.log(rashed["mother"]); //Rabea Akter
+
+// second syntax for when we want to add a dynamic value:
+let adrs = `address`;
+
+console.log(rashed[adrs]); //Dhaka, Bangladesh
+console.log(rashed.adrs); //undefined
 
 //to add new item:
 rashed.education = "jamia madania feni";
@@ -61,10 +70,13 @@ const addFunc = {
 addFunc.fullName(); //Labib irfan
 
 
-//to acces all items of object via 'for in' loop:
+//to acces all items of object via 'for...in' loop:
+let txt = ``;
 for(items in addFunc) {
     console.log(addFunc[items]); //Labib irfan, Labib, irfan, feni,Bangladesh,
     console.log(items); //fName, lName, address, fullName
+    console.log(txt += addFunc[items]); /*Labibirfanfeni, Bangladeshfunction(){
+        console.log(`${this.fName} ${this.lName}`);} */
 }
 
 
@@ -236,3 +248,179 @@ const {secondObj:{thirdObj:{myHome:myAddress}}} = firstObj;
 
 console.log(myAddress); //Feni, Bangladesh
 console.log(myHome); //Feni, Bangladesh
+
+
+
+//delete:
+const methods = {
+    name: `Labib irfan`,
+    age: 3,
+    mother: `Maria`,
+    father: `irfan`
+}
+console.log(methods.mother); //Maria
+delete methods.mother;
+console.log(methods.mother); //undefined
+
+console.log(methods.father); //irfan
+delete methods[`father`];
+console.log(methods.father); //undefined
+
+// JavaScript bulting object cannot be delete, it's will crash our systam;
+
+
+// 'this' keyword:
+const smt = {
+    fName: `ismat`,
+    lName: `maymuna`,
+    father: `Noman`,
+    mother: `Jannat`,
+    fullName: function() {
+        return console.log(`${this.fName} ${this.lName}`)
+    }
+}
+smt.fullName(); //ismat maymuna ('this' means owner of the function);
+
+// tyoeof 'fullName' in 'smt':
+console.log(typeof smt.fullName); //function;
+
+// function in out of the object:
+smt.fatherANDmother = function(){
+    return console.log(`My name is: ${this.fName}, my father is: ${this.father} and my mother is: ${this.mother}.`)
+}
+smt.fatherANDmother(); //My name is: ismat, my father is: Noman and my mother is: Jannat.;
+
+
+// toUpperCase:
+console.log(smt.fName.toUpperCase()); //ISMAT  (cannot change original value);
+
+// toUpperCase: (function method)
+smt.toUpper = function(){
+    return console.log(`${this.fName} ${this.lName}`.toUpperCase())
+}
+smt.toUpper(); // ISMAT MAYMUNA
+
+
+
+
+
+// four way to display object in HTML:
+
+const displayObj = {
+    name: `Labib`,
+    father: `irfan`,
+    mother: `Maria`
+};
+
+let display = document.querySelector(`.display`);
+let display1 = document.querySelector(`.display1`);
+let display2 = document.querySelector(`.display2`);
+let display3 = document.querySelector(`.display3`);
+let display4 = document.querySelector(`.display4`);
+let display5 = document.querySelector(`.display5`);
+let display6 = document.querySelector(`.display6`);
+
+
+display.innerHTML = displayObj; //[object Object]
+
+// by names:
+display1.innerHTML = `I'm ${displayObj.name}, father: ${displayObj.father}, mother: ${displayObj.mother}`; //I'm Labib, father: irfan, mother: Maria
+
+// by Values:
+display2.innerHTML = Object.values(displayObj); //Labib,irfan,Maria
+//  2:
+const objArr = Object.values(displayObj);
+
+display6.innerHTML = objArr; //Labib,irfan,Maria
+
+//by keys: (for print them)
+display3.innerHTML = Object.keys(displayObj); //name,father,mother
+
+//by for in:
+let txt2 = ``;
+for(x in displayObj){
+    txt2 += `${displayObj[x]}, `;
+}
+display4.innerHTML = txt2; //Labib, irfan, Maria,
+
+//by JSON.stringify:
+display5.innerHTML = JSON.stringify(displayObj); //{"name":"Labib","father":"irfan","mother":"Maria"}
+
+
+
+
+// Object Accessors: (job interview)
+
+
+// getter: ('get' keyword)
+// ('get' better than a fucntion in object, cause he save the memory space)
+const getter = {
+    name: `Umama`,
+    age: 22,
+    language: `Arabic`,
+    get nameAndLang(){
+        return `My Name is: ${this.name} my language is: ${this.language}`;
+    }
+}
+console.log(getter.nameAndLang); //My Name is: Umama my language is: Arabic
+
+
+// setter: ('set' keyword)
+const setter = {
+    name: `Umama`,
+    age: 22,
+    language: ``,
+    set setLang(langu){
+        this.language = langu;
+    }
+}
+console.log(setter.language); //(empty)
+
+setter.setLang = `English`;
+console.log(setter.language); //English
+
+
+// Object.defineProperty(): (for use 'set' property in outsite of object;
+const defineProperty = {
+    fName: `Labib`,
+    lName: `irfan`
+}
+
+Object.defineProperty(defineProperty, `FullName`,{
+    get: function(){
+        return this.fName + " " + this.lName;
+    }
+})
+console.log(defineProperty.FullName); //Labib irfan
+
+
+
+
+
+
+// Object constructor: (for blue print)
+
+function Student(name, age, classNo){
+    this.Name = name;
+    this.age = age;
+    this.classNo = classNo;
+}
+
+const labibIfan = new Student(`Labib`, 3, `Class One`);
+const ismatNoman = new Student(`ismat maymuna`, -1, `No classNO.`, `Feni branch`);
+console.log(labibIfan); //Student {Name: 'Labib', age: 3, classNo: 'Class One'}
+console.log(ismatNoman); //Student {Name: 'ismat maymuna', age: -1, classNo: 'No classNO.'}
+
+// for add new value in constructor function:
+labibIfan.mother = `Maria`;
+console.log(labibIfan); //Student {Name: 'Labib', age: 3, classNo: 'Class One', mother: 'Maria'}
+
+
+// Built-in JS constructor:
+const newString = new String();
+const newNumber = new Number();
+const newBoolean = new Boolean();
+const newObj = new Object();
+const newArr = new Array();
+const newDate = new Date();
+// and more...
