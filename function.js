@@ -1,8 +1,8 @@
-console.log("function");
+console.log(`function'is here`);
 
 //two way to declare a function;
 
-//(function statement);
+//function statement:
 function newFunc(x, y) {
     let sum = x * y;
     return sum;

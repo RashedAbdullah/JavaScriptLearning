@@ -441,3 +441,28 @@ const newRegExp = new RegExp();
 
 
 // JavaScript is prototype baset language, no class baset like ohters;
+
+
+// for make a thing (like object) iterator, we want to find in this 'symbol.iterator':
+
+const iterationObj = {};
+
+iterationObj[Symbol.iterator] = function(){
+    let n = 0;
+    let done = false;
+    return {
+        next(){
+            n += 10;
+            if(n == 100) {done = true};
+            return {
+                value: n,
+                done: done
+            }
+        }
+    }
+}
+
+for(iterated of iterationObj){
+    console.log(iterated);
+}
+// (it's complex, so need more practice and more knolage)
