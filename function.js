@@ -1,6 +1,6 @@
 console.log(`function'is here`);
 
-//two way to declare a function;
+//two way to declar a function;
 
 //function statement:
 function newFunc(x, y) {
@@ -20,7 +20,7 @@ aboutMe("ismat maymuna", -1)
 aboutMe("umama", 20)
 
 
-//second way; storing in a variable;
+//second way -- storing in a variable:
 // (Function expression)
 const storeFunc = function(x, y){
     return x + y;
@@ -61,7 +61,7 @@ msg("Labib irfan") ("tea");
 /*
 first class function:
 
-function of javaScript first class function becouse we can pass a function as a argument, and we can return a function from other function, and we can set a function as a variable;
+function of javaScript first class function because we can pass a function as a argument, and we can return a function from other function, and we can set a function as a variable;
 */
 
 //as a argument:
@@ -94,6 +94,10 @@ varFunc(`Labib`);
 
 
 
+
+const funcCons = new Function(`a`,`b`, `return a + b`);
+
+console.log(funcCons(44,44)) //88
 
 
 
