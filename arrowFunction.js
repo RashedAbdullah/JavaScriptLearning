@@ -3,17 +3,17 @@ console.log(`'Arrow Function / Fat arrow' is here`);
 // arrow function is a Syntactic Sugar;
 
 /*
-arrow function always function expression;
-so will show error when we use as a hoisting, often of normal function;
+arrow function always have been function expression;
+so will show error when we use as a hoisting, often normal functions;
 */
 
 const arrowFunc = () => {
     console.log(`this is arrow function`);
 }
-arrowFunc();
+arrowFunc(); //this is arrow function
 
 const arrowFunc2 = () => console.log(`Second style of arrow function`);
-arrowFunc2();
+arrowFunc2(); //Second style of arrow function
 
 
 //by usin 'map' if we want to someone's age, we can code like this in ES5:
@@ -39,9 +39,9 @@ but when he have multiple line, then want to 'return' keyword
 
 const currentAge622 = dob.map((oneDob, index) => {
     let age = 2023 - oneDob;
-    return age;
+    return `${index}: ${age}`;
 });
-console.log(currentAge622); //(4) [24, 3, 1, 21]
+console.log(currentAge622); //(4) ['0: 24', '1: 3', '2: 1', '3: 21']
 
 
 
@@ -51,27 +51,28 @@ console.log(currentAge622); //(4) [24, 3, 1, 21]
 //ES5
 const obj = {
     aFunc: function(){
-        console.log(this);
+        console.log(this); //{aFunc: ƒ} (owner object)
         return function(){
-            console.log(this);
+            console.log(this); //Window
         }
     }
 }
-obj.aFunc()(); //Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+obj.aFunc()(); 
+
 
 console.log(`_______`)
 
-//ES6
+//ES6:
 const obj6 = {
     aFunc: () => {
-        console.log(this);
-        return () => console.log(this);
+        console.log(this); //Window
+        return () => console.log(this); //Window
     }
 }
-obj6.aFunc()(); //Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+obj6.aFunc()();
 
-//this is HTML: //(This is 'this' element [object Window])
-window.addEventListener(`load`, ()=>{document.querySelector(`.showthis`).innerHTML = `This is 'this' element ${this}`;})
+//this in HTML: //(This is 'this' element [object Window])
+window.addEventListener(`load`, ()=>{document.querySelector(`.showthis`).innerHTML = `This is 'this' element ${this}`;}) //This is 'this' element [object Window]
 
 
 //in normal function value of 'this' will defined how to called he, and in arrow function value of 'this' difined who called he;

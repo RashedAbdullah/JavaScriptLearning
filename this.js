@@ -2,11 +2,11 @@ console.log(`'this' is here`);
 
 //gloal (this); (window)
 //and vlaue of this same in strict mode or non strict mode;
-console.log(this);
+console.log(this); //window
 console.log(this === window); //true;
 
 
-//in function
+//'this' in function:
 function thisFunc(){
     console.log(this);
 }
@@ -25,22 +25,22 @@ function accidental(){
 }
 console.log(accidental()); //undefined;
 console.log(names); //Rashed Abdullah;
-//couse "this" is globla object, so "names" also global; so when i call "names" outside of functition or inside of function, it's will work; but when be under "strict mode" it's cannot work;
+//cause "this" is global object, so "names" also global; so when i call "names" outside of functition or inside of function, it's will work; but when be under "strict mode" it's cannot work;
 
 
 
-//"this" in object;
+//"this" in object's method:
 const thisObj = {
     Fname: "Labib",
     Lname: "irfan",
-    age: 23,
+    age: 3,
     fullName: function(){
         console.log(this.Fname + " " + this.Lname);
     }
 }
 thisObj.fullName(); //Labib irfan
 
-//object in object;
+//object in object:
 const prntObj = {
     name: "ismat",
     age: -1,
@@ -56,20 +56,21 @@ const prntObj = {
     }
 }
 prntObj.address.fullAddress(); //Sonagazi, Feni, Bangladesh;
-//call
+
+//call:
 prntObj.address.fullAddress.call(prntObj); //Dhaka, Bangladesh Riyadh, Soudi Arabia;
 
 
 
-//call, bind, apply;
+//call, bind, apply:
 
 /*
-call and bind can access multiple arguments
-but apply can access only two arguments; second are array;
+call and bind can access multiple arguments,
+but apply can access only two arguments, second are array;
 */
 
 
-//call;
+//call:
 const myBorn = {
     name: "Rashed Abdullah",
     dob: 1999,
@@ -87,7 +88,7 @@ myBorn.age(2023) //Rashed Abdullah is 24 Year Old;
 myBorn.age.call(LbbBorn, 2023) //Labib irfan is 3 Year Old;
 
 
-//apply;
+//apply:
 const aboutMe = {
     name: "Rashed Abdullah",
     father: "Abdullah",
@@ -111,7 +112,7 @@ const lbb = {
         console.log(`${msg} ${this.name} is ${thisYear - this.born} year old!`)
     }
 }
-lbb.age(2023, `Hello my family!`); //ello my family! Labib irfan is 3 year old!
+lbb.age(2023, `Hello my family!`); //Hello my family! Labib irfan is 3 year old!
 
 const ismat = {
     name: `ismat maymuna`,
@@ -121,7 +122,17 @@ const ismat = {
 let one = lbb.age.apply(ismat, [2023, `Hello Rashed!`]); //Hello Rashed! ismat maymuna is 1 year old!;
 
 
-//bind;
+// for find 'max' ro 'min' of array by 'apply':
+const mathing = [34,54,34,56,65];
+console.log(Math.max.apply(null, mathing)); //65
+console.log(Math.max.apply('', mathing)); //65
+console.log(Math.max.apply(0, mathing)); //65
+console.log(Math.min.apply(null, mathing)); //34
+console.log(Math.max(3,5,64,334,56)); //334
+console.log(Math.max(3,5,64,334,56)); //334
+
+
+//bind:
 const saad = {
     name: `Saad Rayhan`,
     job: `Teacher`,
@@ -144,4 +155,4 @@ let thisEvent = document.querySelector(`.thisEvent`);
 thisEvent.addEventListener(`click`,()=>{
     console.log(`Hello world!`);
     //<button class="thisEvent" onclick="this.style.color='red'">hello</button>
-})
+});

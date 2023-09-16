@@ -1,3 +1,8 @@
+Need more practice:
+
+
 ** in operator;
-prototype;
+all about prototype;
 iterator (symbol.iterator, next());
+ diference between call and invoking; (concidering who called, it's invoking);
+ 'this' in 'use strict' mode;

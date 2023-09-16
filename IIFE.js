@@ -1,3 +1,4 @@
+console.log(`'IIFE' immediately invoked function expressions`);
 /*
 IIFE
 immediately invoked function expressions;
@@ -12,12 +13,17 @@ var summary = (function(){
     // return 10 + 10;
     console.log("hello function expression")
 })();
-
 // console.log(summary);
 
 
+// without function Name:
+(function(){
+    console.log(`without fucntion name`)
+})(); //without fucntion name
 
-//when we need to value of private function (IIFE), then we can use function expression, then we can call this private function in another function; like this:
+
+
+//when we need to value of private function (IIFE), then we can use function expression abd we can call this private function in another function, like this:
 const sumOne = (function(){
     const Rashed = {
         name: "Rashed Abdulah",
@@ -27,8 +33,8 @@ const sumOne = (function(){
 })();
 
 const interface = (function(){
-    console.log(`Hello ${sumOne.name}`)
-    console.log(`and i alive in ${sumOne.address}`)
+    console.log(`Hello ${sumOne.name}`) //Hello Rashed Abdulah
+    console.log(`and i alive in ${sumOne.address}`) //and i alive in Feni, Bangladesh
 })();
 
 
@@ -39,9 +45,9 @@ const interface = (function(){
     let rsd = `Rashed Abdullah`;
     let lbb = `Labib irfan`;
     let ismt = `ismat mymuna`;
-    console.log(ismt);
+    console.log(ismt); //ismat mymuna
 }
-// console.log(rsd)   //show error;
+// console.log(rsd)   //Uncaught ReferenceError: rsd is not defined at IIFE.js:45:13
 
 {
     const num = 20;
@@ -62,6 +68,6 @@ myName() //it's not private couse declared  by 'var';
     const myName2 = function(){
     console.log(`my name is labib irfan`);
 }
-myName2();
+myName2(); //my name is labib irfan
 }
 // myName2(); //now it's private;

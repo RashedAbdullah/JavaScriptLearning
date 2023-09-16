@@ -35,25 +35,25 @@ console.log(storeFunc(30, 50));
 function passFunc(name, callback){
     let myAge = 23;
     callback(myAge);
-    console.log(`i'm ${name} `)
+    console.log(`i'm ${name} `); //i'm Rashed Abdullah
 }
-function wellcome(age) {
-    console.log(`my age is ${age}`);
+function wellcome(myAge) {
+    console.log(`my age is ${myAge}`); //my age is 23
 }
 
-passFunc(`Rashed Abdullah`, wellcome); //?
+passFunc(`Rashed Abdullah`, wellcome);
 
 
 //we can return a function in a function;
 function msg(name){
-    console.log(`Wellcome mr. ${name}`);
+    console.log(`Welcome mr. ${name}`);
     return function(menu){
         console.log(`Do you like ${menu} mr. ${name}`)
     }
 }
 
-msg("Naim Ahmad") ("Coffee");
-msg("Labib irfan") ("tea");
+msg("Naim Ahmad") ("Coffee"); //Welcome mr. Naim Ahmad, Do you like Coffee mr. Naim Ahmad
+msg("Labib irfan") ("tea"); //Welcome mr. Labib irfan, Do you like tea mr. Labib irfan
 
 
 
@@ -75,7 +75,7 @@ function func2(age) {
     console.log(`and My age is: ${age}`)
 }
 
-func1(`Rashed Abdullah`, func2);
+func1(`Rashed Abdullah`, func2); //and My age is: 23, My name is: Rashed Abdullah
 
 //Return a function:
 function wlcm(name){
@@ -84,22 +84,128 @@ function wlcm(name){
         console.log(`Do you like ${menu}`)
     }
 }
-wlcm(`Naim`)(`Tea?`);
+wlcm(`Naim`)(`Tea?`); //Welcome mr. Naim, Do you like Tea?
 
-//Store as a variable:
+//Store as a variable: (function expression)
 const varFunc = function func(name){
     console.log(`Hello Mr. ${name}`)
 }
-varFunc(`Labib`);
+varFunc(`Labib`); //Hello Mr. Labib
 
 
 
-
+// function constructor:
 const funcCons = new Function(`a`,`b`, `return a + b`);
-
 console.log(funcCons(44,44)) //88
 
 
 
+//funciton hoisting:
+console.log(funcHoisting(22,22));
 
-// For more function methods go to "Rest.js" parameters and Default.js;
+function funcHoisting(a,b){
+    return a + b;
+}
+
+
+// function can be used as values:
+function valuedFunc(a,b){
+    return a + b;
+}
+const result = valuedFunc(55,55);
+console.log(result); //110 (if we cannot 'return' will show 'undefined');
+
+
+// typeof function show function, but he is described as object;
+console.dir(valuedFunc); //(he have values like object);
+function fubcObj(){
+    return arguments.length;
+}
+console.log(fubcObj(`rashed`, `labib`, `mahmud`)); //3
+
+
+//toString():
+const saveString = fubcObj.toString();
+console.log(saveString); //function fubcObj(){ return arguments.length;}
+
+
+// arguemts of function is array: (he have 'length' and more properties of array);
+function argumentOfFunc(a){
+    console.log(arguments); //Arguments [callee: ƒ, Symbol(Symbol.iterator): ƒ]
+    console.log(arguments.length); //1
+    console.log(arguments[0]); //34
+}
+
+argumentOfFunc(34);
+
+
+
+// default parameter:
+function defaultPRM(a, b, c){
+    if(c === undefined){
+        c = 10;
+    }
+    return a + b + c;
+}
+console.log(defaultPRM(5,5)); //20
+
+
+function defaultPRM2(a, b, c = 10){
+    return a + b + c;
+}
+console.log(defaultPRM2(5,5)); //20
+console.log(defaultPRM2(5, 5, 50)); //60 (not default)
+
+
+
+
+// arguments are passed by values:
+function argByValue(x, y){
+    x = x + 4;
+    return x * y;
+}
+
+let e = 5;
+let f = 3;
+
+console.log(argByValue(e,f)); //27; (cause value of 'e' 9)
+console.log(e); //5 (not changed original value);
+
+
+
+
+// Object are passed by reference:
+function objReference(x){
+    x.one = 2;
+    return x.one * x.two;
+}
+
+const objRefer = {
+    one: 5,
+    two: 4
+}
+
+console.log(objReference(objRefer)); //8
+
+console.log(objRefer); //{one: 2, two: 4} (changed value of 'one');
+
+
+
+// all function are methods, cause they are in window object, like this:
+/*
+window = {
+    rsd: function(){
+        return `hello world!`
+    },
+    lbb: function(){
+        return `Labib irfan`
+    }
+}
+window.rsd();
+window.lbb();       */
+
+
+
+
+
+// and more function practice in "IIFE.js" "Rest.js" and Default.js;
