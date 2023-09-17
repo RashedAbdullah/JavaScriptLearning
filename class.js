@@ -1,4 +1,4 @@
-console.log(`Class of javaScript is here`);
+console.log(`'Class' of javaScript is here`);
 
 //function constructor in ES5:
 var Child = function(name, dob){
@@ -19,8 +19,6 @@ Child.prototype.currentAge = function(){
 }
 lbb.currentAge(); //My name is Labib and im 3 Year Old!
 ismat.currentAge(); //My name is ismat and im 0 Year Old!
-
-
 
 
 
@@ -69,6 +67,7 @@ console.log(Sami.address); //Narayangang;
 
 //That was a class statement;
 
+
 //class expression:
 const classExp = class {
     constructor(name, dob) {
@@ -113,7 +112,7 @@ irfan.comment(`as a second big brother`); //irfan is my family member as a secon
 
 //Prototyoe based inheritance (calss):
 
-// ES5:
+// ES5: (function constructor (expression))
 var Person5 = function(name, age, job){
     this.name = name;
     this.age = age;
@@ -258,3 +257,41 @@ console.log(myNewPhone.release); //2022
 console.log(myNewPhone.publish); //05 jun, 2022
 
 myNewPhone.present(); //Samsung A52 is will present in Mon Sep 11 2023 10:13:59 GMT+0600 (Bangladesh Standard Time)
+
+
+
+
+// getter and setter:
+class MyLaptop {
+    constructor(brand){
+        this.brand = brand;
+    }
+    get laptopName(){
+        return this.brand;
+    }
+    set laptopName(x){
+        return this.brand = x;
+    }
+}
+
+const myLPTP = new MyLaptop(`MSI`);
+console.log(myLPTP); //MyLaptop {brand: 'MSI'}
+// console.log(myLPTP()); //Uncaught TypeError: myLPTP is not a function
+
+
+// static:
+class StaticClass {
+    constructor(brand, model){
+        this.brand = brand;
+        this.model = model;
+    }
+
+    static myLaptop(lptp){
+        console.log(`my lapatop model is: ${this.brand} and brnad is: ${this.model}, ${lptp}.`);
+    }
+}
+const myNewLaptop = new StaticClass(`MSI`, `Modern 15`,);
+console.log(myNewLaptop); //StaticClass {brand: 'MSI', model: 'Modern 15'}
+
+// deference between normal class and 'class static':
+StaticClass.myLaptop(`it's from my big brother`); //my lapatop model is: undefined and brnad is: undefined, it's from my big brother.

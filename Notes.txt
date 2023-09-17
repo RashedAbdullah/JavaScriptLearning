@@ -4,5 +4,7 @@ Need more practice:
 ** in operator;
 all about prototype;
 iterator (symbol.iterator, next());
- diference between call and invoking; (concidering who called, it's invoking);
- 'this' in 'use strict' mode;
+diference between call and invoking; (concidering who called, it's invoking);
+'this' in 'use strict' mode;
+Closure;
+getter and setter in 'class';
