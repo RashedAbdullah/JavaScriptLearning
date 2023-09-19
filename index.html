@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./function.js">
-    <script src="./Async.js" defer></script>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./DOM.js" defer></script>
     <title>JavaScript practice</title>
 </head>
 <body>
@@ -194,6 +194,40 @@
     <div>
         <p>Async box</p>
         <p class="displayResult"></p>
+    </div>
+
+
+    <!-- DOM -->
+    <div class="dom">
+        <p id="idCatch"></p>
+        <p class="catchByClass"></p>
+        <!-- multiple class -->
+        <p class="multipleClass">multiple class 1</p>
+        <p class="multipleClass">multiple class 2</p>
+        <p class="multipleClass">multiple class 3</p>
+        <h4>catch by tag name</h4>
+        <!-- Query selector -->
+        <p class="querySelectorClass"></p>
+        <p id="querySelectorId"></p>
+
+        <!-- form -->
+        <form id="form1" action="">
+            First Name: <input type="text" name="fname" value="Labib"><br>
+            Last Name: <input type="text" name="lname" value="irfan"><br>
+            <input type="submit" value="submit">
+        </form>
+        <p class="formValue"></p>
+
+        <!-- Attribute -->
+        <img id="imgChange" src="./img/pxl.jpg" alt="">
+
+        <!-- form validation -->
+        <form name="form2" action="Notes.txt" onsubmit="return validationForm()">
+            Name: <input type="text" name="yourName">
+            <input type="submit" value="submit">
+        </form>
+
+        <!-- DOM CSS -->
     </div>
 
 </body>

@@ -179,7 +179,7 @@ console.log(`Task 3`);
 
 // example for promise:
 let paymentCourse = true;
-let marksCourse = 80;
+let marksCourse = 70;
 function enrollCousre(){
     console.log(`Your enrollment in course on progress...`)
 
@@ -215,25 +215,31 @@ function getCertificateCourse(){
     console.log(`Your certificate of course in progress...`);
 
     const promise = new Promise((resolve)=>{
-
+        //const promise = new Promise.resolve(`Congrats! you got the certificate of course`);
         setTimeout(() => {
             resolve(`Congrats! you got the certificate of course`)
         }, 2000);
     });
+
     return promise;
 }
-
-enrollCousre()
-            .then(progressCourse) //but how i show the value of resolve in here!
-            .then(getCertificateCourse)
-            .then((value)=>{console.log(value)})
-            .catch((err)=>{console.log(err)})
-
-
-
-
+// enrollCousre()
+//             .then(progressCourse) //but how i show the value of resolve in here!
+//             .then(getCertificateCourse)
+//             .then((value)=>{console.log(value)})
+//             .catch((err)=>{console.log(err)})
 
 // async - await:
-async function itsAsync(){
-    console.log(`it's asyn function`);
+async function asyncFunc(){
+    try {
+        const msg1 = await enrollCousre();
+        console.log(msg1);
+        const msg2 = await progressCourse();
+        console.log(msg2);
+        const msg3 = await getCertificateCourse();
+        console.log(msg3)
+    } catch(err){
+        console.log(err);
+    }
 }
+asyncFunc();

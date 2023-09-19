@@ -4,3 +4,7 @@ body{
     font-family: 'Noto Serif Bengali', serif;
     font-size: 20px;
 }
+
+img {
+    height: 200px;
+}
