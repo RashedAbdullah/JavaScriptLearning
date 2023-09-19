@@ -75,3 +75,14 @@ function validationForm(){
 
 
 // DOM CSS:
+const cssStyle = document.querySelector(`.cssStyle`);
+cssStyle.style.backgroundColor = `red`;
+cssStyle.style.color = `white`;
+cssStyle.style.fontSize = `30px`; //(no hyphen-, only camelCase)
+cssStyle.style.padding = `50px`;
+
+
+
+
+
+// DOM Animation:
