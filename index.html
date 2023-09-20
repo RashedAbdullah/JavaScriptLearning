@@ -16,30 +16,7 @@
     <p id="arr8"></p>
 
     <!-- <button style="background-color: blanchedalmond; border: none; height: 30px; width: 100px; color:rgba(172, 0, 160, 0.651); border-radius: 10px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; text-align: center;" onclick="hello()">Print Please</button> -->
-
-    <button onclick="Show()">Today is:</button>
-    <p id="today"></p>
-
-
-    <h3 onclick="this.innerHTML = Date()">Today is:</h3>
-
-    <h3 onmouseover="this.innerHTML = `Labib irfan`" onmouseout="this.innerHTML = `Rashed Abdullah`">Rashed Abdullah</h3>
-
-    
-
-    <button onclick="document.querySelector('#selection').innerHTML = `My name is Rashed Abdulla and i'm was a student of jamia madanida feni bangladesh`">Date is:</button>
-    <p id="selection"></p>
-
-    <button id="inJs">Button</button>
-    <p id="showInJs"></p>
-
-    <!-- addEventListener -->
-    <button id="button">AEL</button>
-    <p id="buttonListener"></p>
-    <p id="buttonListenerDate"></p>
-
-    <button id="mouse">mouseOver</button>
-    <p id="mouseListener"></p>
+ 
 
 
     <!-- Bubling and...  -->
@@ -229,6 +206,53 @@
 
         <!-- DOM CSS -->
         <p class="cssStyle">CSS Style by DOM</p>
+
+        <!-- DOM Animation -->
+        <div class="bigBox">
+            <div class="smallBox"></div>
+        </div>
+        <button onclick="DOM_Animation()">Animation2</button>
+        <!-- Animation practice -->
+        <div class="bigBox2">
+            <div class="smallBox2"></div>
+        </div>
+        <button onclick="animationPractice()">Animation2</button>
+
+        <!-- Event -->
+        <div class="event">
+            <!-- <p class="changText" onmouseover="textChange()">My Name is Rashed Abdullah</p> -->
+            <!-- inline code: -->
+            <p onclick="this.innerHTML = `My Name is Rashed Abdullah`">My Name is Labib irfan</p>
+
+            <button class="addEvent">Click BTN On JS</button>
+            <input type="text" onchange="console.log(this.value)">
+            <!-- eventListener -->
+            <p class="eventListener1">eventListener</p>
+            <p class="eventListener2">eventListener</p>
+
+            <div class="div">
+                <button class="button">third parameter</button>
+            </div>
+
+            <button class="removeListen" onclick="remove()">RemoveListen to resizing</button>
+
+            <!-- DOM Navigation: (nodeRelationship) -->
+            <div class="parentNode">
+                <p class="child1">DOM Navigation</p>
+                <p class="child2">DOM Navigation</p>
+            </div>
+            <div class="parentElement">
+                <p class="firstElement">this is first element</p>
+                <p class="secondElement">this is second element</p>
+                <button onclick="removeFunc()">removeFunc</button>
+            </div>
+            <!-- HTMLCollection/Nodelist -->
+            <div>
+                <p class="node">Hello world</p>
+                <p class="node">Hello world 2</p>
+            </div>
+            
+        </div>
     </div>
 
 </body>

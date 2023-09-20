@@ -1,73 +1,57 @@
-// alert(`Hello i'm Event `)
+console.log(`'Event' is here`);
 
-
-let today = document.getElementById("today");
-
-function Show(){
-    if(Number === String){
-        today.innerHTML = print();
-    } else {
-        today.innerHTML = Date();
-    }
+function textChange(){
+    const changText = document.querySelector(`.changText`);
+    changText.innerHTML = `My Name is Labib irfan`;
 }
 
-let inJavaScript = document.querySelector("#inJs");
+const addEvent = document.querySelector(`.addEvent`);
 
-inJavaScript.onclick = function(){
-    let showInIs  = document.querySelector("#showInJs");
-    
-    if(5 === 6){
-        showInIs.innerHTML = `Hello Labib irfan`;
-    } else if(6 === 7){
-        showInIs.innerHTML = `Hello Rashed Abdullah`;
-    } else {
-        showInIs.innerHTML = `Sorry, i don't know anything about you`;
-    }
-    
+// it's also a way to print event on HTML:
+addEvent.onclick = ()=> console.log(`Hello world`);
+
+
+// eventListener:
+//1
+const eventListener1 = document.querySelector(`.eventListener1`);
+eventListener1.addEventListener(`click`, ()=>console.log(`Hello world`))
+//2
+const eventListener2 = document.querySelector(`.eventListener2`);
+function addEventListenerFunc(){
+    console.log(`this is second way to make addEventListener`);
 }
+eventListener2.addEventListener(`click`, addEventListenerFunc); //(function body)
+// multiple addEventlistener:
+eventListener1.addEventListener(`click`, ()=>console.log(`I'm Labib irfan`));
+eventListener1.addEventListener(`mouseover`, ()=>console.log(`My mother is maria`));
+//for parameter:
+function para(texts){
+    console.log(texts);
+}
+eventListener2.addEventListener(`click`, ()=>{para(`With paramenter and arguments`)})
+
+// window.eventListener:
+function windowResize(){console.log(`window resized by user`)};
+window.addEventListener(`resize`, windowResize);
+window.addEventListener(`load`, ()=>console.log(`window loaded`));
+window.addEventListener(`resize`, ()=>console.log(`clicked wondow event`));
+window.addEventListener(`keydown`,()=>console.log(`window keydown`)); //(don't know how work);
+window.addEventListener(`scroll`, ()=>console.log(`You're scrolling now`));
+// and more huge option for window.addEventListener;
 
 
-// AddEventListener
+//Third parameter of addEventListener:
+const div = document.querySelector(`.div`);
+const button = document.querySelector(`.button`);
 
-const button = document.querySelector("#button");
+div.addEventListener(`click`, ()=>console.log(`this is div`), true); //printed second  (after 'true' printed first)
+button.addEventListener(`click`, ()=>console.log(`this is button`), true); //printed first (after 'true' printed last)
+// it's default system of event, named as 'bubling' 
+// when we want to print div befor button then third paramenter: true (named as 'capture')
 
-button.addEventListener("click", function(){
+//removeEventListener:
+const removeListen = document.querySelector(`.removeListen`);
 
-    const buttonListener = document.querySelector("#buttonListener");
-    const buttonListenerDate = document.querySelector("#buttonListenerDate");
-
-    buttonListener.innerHTML = `Hello addEventListener, How are you?`;
-    buttonListenerDate.innerHTML = Date();
-
-})
-
-
-const mouse = document.querySelector("#mouse");
-mouse.addEventListener("mouseover", function(){
-    const mouseListener = document.querySelector("#mouseListener");
-    mouseListener.innerHTML = 'This Event will show when mouse overed';
-})
-
-
-// Bubbling (and modified by stopPropagation);
-const head = document.querySelector("#head");
-const child = document.querySelector("#child");
-
-child.addEventListener("click", function(){
-    console.log(`This is child`);
-}, true);
-
-head.addEventListener("click", function(event){
-    event.stopPropagation();
-    console.log(`This is head`);
-}, true);
-
-console.dir(head);
-
-
-
-const link = document.querySelector("#link");
-
-link.addEventListener("click", function(event){
-    event.preventDefault();
-});
+function remove(){
+    window.removeEventListener(`scroll`, windowResize());
+} //totaly not working;

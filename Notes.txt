@@ -8,3 +8,4 @@ diference between call and invoking; (concidering who called, it's invoking);
 'this' in 'use strict' mode;
 Closure;
 getter and setter in 'class';
+removeEventListener;

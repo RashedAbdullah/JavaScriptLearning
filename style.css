@@ -8,3 +8,35 @@ body{
 img {
     height: 200px;
 }
+
+.bigBox {
+    height: 300px;
+    width: 300px;
+    background-color: greenyellow;
+    position: relative;
+}
+
+.smallBox {
+    height: 50px;
+    width: 50px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.bigBox2 {
+    margin-top: 10px;
+    height: 350px;
+    width: 350px;
+    background-color:aqua;
+    position: relative;
+}
+
+.smallBox2 {
+    height: 50px;
+    width: 50px;
+    background-color: rgb(1, 54, 54);
+    border-radius: 50%;
+    position: absolute;
+    /* left: 300px; */
+}
