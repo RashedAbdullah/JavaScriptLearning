@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <script src="./DOM.js" defer></script>
+    <script src="./BOM.js" defer></script>
     <title>JavaScript practice</title>
 </head>
 <body>
@@ -251,6 +251,72 @@
                 <p class="node">Hello world</p>
                 <p class="node">Hello world 2</p>
             </div>
+
+            <!-- BOM -->
+            <div>
+                <!-- window height width -->
+                <p class="width"></p>
+                <p class="height"></p>
+
+                <!-- open and close window -->
+                <input type="button" value="OpenWindow" onclick="openWindow()">
+                <input type="button" value="closeWindow" onclick="closeWindow()">
+
+                <!-- screen -->
+                <p class="screenWidth"></p>
+                <p class="screenHeight"></p>
+                <p class="screenAvilWidth"></p>
+                <p class="screenAvilHeight"></p>
+                <p class="screenColorDepth"></p>
+                <p class="screenPixelDepth"></p>
+
+
+                <!-- location -->
+                <p class="href"></p>
+                <p class="hostname"></p>
+                <p class="pathname"></p>
+                <p class="protocol"></p>
+                <p class="port"></p>
+                <input type="button" value="myGithub" onclick="github()">
+
+                <!-- history: -->
+                <input type="button" onclick="back()" value="back">
+                <input type="button" onclick="forward()" value="forward">
+
+                <!-- Navigator -->
+                <p class="appName"></p>
+                <p class="appCodeName"></p>
+                <p class="platform"></p>
+                <p class="cookieEnabled"></p>
+                <p class="product"></p>
+                <p class="appVersion"></p>
+                <p class="userAgent"></p>
+                <p class="language"></p>
+                <p class="online"></p>
+                <p class="javaEnabled"></p>
+
+
+                <!-- Popup boxes -->
+                <p class="confirm"></p>
+                <p class="prompt"></p>
+
+                <input type="button" value="Alert" onclick="alertFunc()">
+                <input type="button" value="Confirm" onclick="confirmFunc()">
+                <input type="button" value="Prompt" onclick="promptFunc()">
+
+                <!-- Timing -->
+                <p class="timeout"></p>
+                <p class="interval"></p>
+
+                <input type="button" value="setTimeout" onclick="setTimeoutFunc()">
+                <input type="button" value="stopTimout" onclick="stopTimeoutFunc()"> <br>
+
+                <input type="button" value="start interval" onclick="startInterval()">
+                <input type="button" value="stop interval" onclick="stopInterval()">
+            </div>
+
+
+
             
         </div>
     </div>
