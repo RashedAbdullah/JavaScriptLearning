@@ -3,6 +3,14 @@ console.log(`API (Aplication programming interface)`);
 
 //forms API:
 
+/*
+.validity.rangeOverflow
+.validity.rangeUnderflow
+.validity.valueMissing
+.setCustomValidity()
+.validationMessage
+*/
+
 // (for show validation message)
 function valitation(){
 
@@ -23,37 +31,59 @@ function valitation(){
     }
 };
 
+// second form API:
+function validOnClick(){
+
+    const inputValue = document.querySelector(`#inputValue`);
+    const sendMessage = document.querySelector(`.sendMessage`);
+
+    if(inputValue.value <= 500 && inputValue.value >= 100){
+        inputValue.setCustomValidity(`You set the number is ${inputValue.value}`);
+    } else if(inputValue.validity.rangeOverflow){
+        inputValue.setCustomValidity(`Sorry! input unded 500`);
+    } else if (inputValue.validity.rangeUnderflow){
+        inputValue.setCustomValidity(`Sorry boss! You must input over 100`);
+    } else if (inputValue.validity.valueMissing){
+        inputValue.setCustomValidity(`Hey boss! why you're don't input somthing!`)
+    }
+
+    if(!inputValue.checkValidity()){
+        sendMessage.innerHTML = inputValue.validationMessage;
+    }
+}
+
 
 
 // History API:
-
+// (it's passed in DOM also)
 function back(){
-    window.history.back();
+    history.back();
 }
 
 function forward(){
-    window.history.forward();
+    history.forward();
 }
 
 function backTo(x){
-    window.history.go(x);
+    history.go(x);
 }
 
 function getHistory(){
-    alert(window.history.length);
+    prompt(history.length);
 }
 
 
 //Storage API:
 
-// (Storage API);
+// (Storage API); (it's will be able after close browser also)
+const presentStorage = document.querySelector(`#presentStorage`);
 
 function lclStorage(key, value){
     localStorage.setItem(key, value);
 }
 
 function getlclStorage(key){
-    alert(localStorage.getItem(key));
+    presentStorage.innerHTML = localStorage.getItem(key);
 }
 
 function removelclStorage(key){
@@ -64,21 +94,21 @@ function clearlclStorage(){
     localStorage.clear();
 }
 
-// (session API):
+// session API: (it's same of local storage, but after closing browser cannot be available)
 
-// ... 
+// sessionStorage.setItem(), sessionStorage.getItem(), sessionStorage.removeItem(), sessionStorage.clear();
 
 
 
 
 //  Worker API:
 
-// Then solution is worker API:
 
 let work;
 
 function startWorker(){
     if(typeof Worker !== `undefined`){
+        //it's for when browser support worker;
 
 
         // if worker already not defined;
@@ -87,12 +117,15 @@ function startWorker(){
         work = new Worker(`worker.js`);
         }
 
-    // Listener for worker.js 
-    work.onmessage = function(event){
+        // Listener for worker.js:
+        work.onmessage = function(event){
         document.querySelector(`.demoworker`).innerHTML = event.data;
-    }
+        }
+
+
     } else {
         alert(`Sorry, your browser does not support Web worker`);
+        //when browser cannot support worker, then this massage;
     }
 
 }
@@ -100,13 +133,11 @@ function startWorker(){
 function stopWorker(){
     if(typeof Worker !== `undefined`){
         work.terminate();
-        work = undefined;
+        work = undefined; //for reuse;
     } else {
         alert(`Stoped your worker`);
     }
 }
-
-//  (it's finally working, but somthing i desn't understand);
 
 
 
@@ -114,20 +145,26 @@ function stopWorker(){
 
 const displayFetch = document.querySelector(`.displayFetch`);
 
-console.log(`it's Async`)
 function getData(){
-    fetch(`http://127.0.0.1:5500/notes.txt`)
-    .then((response) => response.text())
-    .then((data) => {
-        //example of Async;
-        console.log(`Hello world 1`);
-        displayFetch.innerHTML = data});
 
-    console.log(`Hello world 2`)
+    console.log(`Before request (1)`);
+
+    //fetch is async:
+    fetch(`http://api.quran.com/api/v3/juzs`)
+    .then((response) => response.json()) // .text() return json file as text;
+    .then((data) => {
+
+        //example of Async;
+        console.log(data);
+        console.log(`inside request (1)`);
+        displayFetch.innerHTML = data.juzs[5].juz_number});
+        console.log(`After request (1)`);
+
 }
 
 
 function fetchData(){
+
     fetch(`http://127.0.0.1:5500/notes.txt`)
     .then((data)=>{data})
     .then((showData)=>{
@@ -153,25 +190,30 @@ async function getDataAwait(){
 
 
 // GeoLocation API:
+
 const displayLocation = document.querySelector(`.displayLocation`);
 
 function myLocation(){
     if(navigator.geolocation){
-        //if we want to move my position with my laptop/phone moving, we need to use "watchPosition" in place of "getCurrentPosition"
+        //if geolocation is available in browser, then...
+
         navigator.geolocation.getCurrentPosition(myPosition, showUserError);
+        //if we want to move my position with my laptop/phone moving, we need to use "watchPosition" in place of "getCurrentPosition"
+
         // navigator.geolocation.watchPosition(myPosition, showUserError);
     } else {
-        displayLocation.innerHTML = `Sorry bos! your browser dosent support geolocation`;
+        displayLocation.innerHTML = `Sorry bos! your browser cannot support geolocation`;
     }
 }
 
 //show position (latitude and longitude);
 function myPosition(position){
     displayLocation.innerHTML = `My Latitude is ${position.coords.latitude} </br>My Longitude is ${position.coords.longitude}`
-}
+};
 
 
 //show error to user:
+
 function showUserError(error) {
     switch(error.code) {
       case error.PERMISSION_DENIED:

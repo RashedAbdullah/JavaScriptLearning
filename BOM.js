@@ -181,3 +181,25 @@ function stopInterval() {
 
 
 // Cookies:
+
+// set Cookie: document.cookie
+// setExpiryDate (UTC time)
+// path=/: (for save this page only, no on other URL)
+document.cookie = `username=rashed abdullah; expires=1 jan 2024 12:00:00 UTC; path=/`;
+console.log(document.cookie); //username=rashed abdullah
+
+// for replace cookie:
+document.cookie = `username=labib irfan; expires=1 jan 2024 12:00:00 UTC; path=/`;
+console.log(document.cookie); //username=labib irfan;
+
+// multiple cookie:
+document.cookie = `name=Khalid mahmud`;
+console.log(document.cookie); //name; name=Khalid mahmud; username=labib irfan (now name pushed on previos cookies olso);
+
+// delete cookie: (set a time before today, then will be delete outomaticly )
+let toArray = document.cookie = `name=khalid mahmud; expires=1 jan 2022 12:00:00 UTC;`;
+console.log(document.cookie); //name; username=labib irfan (khalid mahmud deleted from every cookies)
+
+// for convert to array:
+let converted = toArray.split(`;`);
+console.log(converted[0]);

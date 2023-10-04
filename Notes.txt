@@ -9,3 +9,5 @@ diference between call and invoking; (concidering who called, it's invoking);
 Closure;
 getter and setter in 'class';
 removeEventListener;
+cookie (need understand and practice);
+History API;

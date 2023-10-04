@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <script src="./BOM.js" defer></script>
+    <script src="./API.js" defer></script>
     <title>JavaScript practice</title>
 </head>
 <body>
@@ -34,27 +34,40 @@
     
     <!-- Forms API -->
     <div>
+        <p class="APIform"></p>
         <input type="number" name="" id="APIInput" min="50" max="90" required>
         <button onclick="valitation()">Form API</button>
-        <p class="APIform"></p>
     </div>
 
+    <!-- second form API -->
+    <form action="">
+        <p class="sendMessage"></p>
+        <input type="number" name="" id="inputValue" required min="100" max="500">
+        <input onclick="validOnClick()" type="button" value="Input Form API">
+    </form>
+
+
+    <!-- Locat storage -->
+    <!-- in Another HTML file -->
+    <a href="LocalSrorage.html">LocalSrorage</a>
 
     <!-- History API -->
+    <hr>
+    <p>History API</p>
     <div>
         <a href="./PageOne.html">Page One</a>
     </div>
 
     <br>
     <div>
-        <a href="./LocalSrorage.html">local Stoage API</a>
+        <a href="https://github.com/RashedAbdullah">Github</a>
     </div>
 
 
-    <br><br>
+    <hr>
 
     <!-- Worker API -->
-
+<p>Worker API</p>
     <div>
         <button onclick="alert(`It's worker`)">Hanging</button>
         <p id="worker"></p>
@@ -67,40 +80,37 @@
 
     <!-- Worker -->
     <div>
+        <p class="demoworker"></p>
+
         <button onclick="startWorker()">Start Worker</button>
         <button onclick="stopWorker()">Stop Worker</button>
-        <button onclick="alert(`in background working woker API!`)">Button</button>
+        <button onclick="alert(`in background working woker API!`)">Wrkr Wrking</button>
 
-        <p class="demoworker"></p>
 
         
         <p>Will show here looping numbers</p>
     </div>
 
-
+<hr>
     <!-- Fetch API -->
     <div>
-        <button onclick="getData()">Fetch API</button>
         <p class="displayFetch"></p>
+        <button onclick="getData()">Fetch API</button>
     </div>
 
     <div>
-        <button onclick="getDataAwait()">Fetch API</button>
         <p class="displayFetchAwait"></p>
+        <button onclick="getDataAwait()">Fetch API</button>
     </div>
 
-
+<hr>
     <!-- GeoLocation -->
     <div>
-        <button onclick="myLocation()">GeoLocation</button>
         <p class="displayLocation"></p>
+        <button onclick="myLocation()">GeoLocation</button>
     </div>
 
-    <pre>Hello Wold!
-        my Name is Rashed Abdullah
-        and i'm a studnet of jaima madania feni
-    </pre>
-
+<hr>
     <!-- for map  -->
     <p class="inHTML"></p>
     <p class="inHTML2"></p>
