@@ -1,0 +1,7 @@
+@font-face {
+    font-family: suranames;
+    src: url(../sura_names.woff2);
+}
+h4 {
+    font-family: suranames;
+}

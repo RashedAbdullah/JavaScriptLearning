@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.outDiv {
+    padding: 20px;
+    border: 1px solid black;
+}
+
+.form {
+    padding: 20px;
+    border: 1px solid green;
+}
+
+.btn {
+    padding: 20px;
+    border: 1px solid yellow;
+}

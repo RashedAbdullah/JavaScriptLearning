@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body > h1 {
+    text-align: center;
+    font-size: 30px;
+    padding: 10px 0;
+}
+
+.outerElem {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+.outerElem > div > div {
+    background-color: rgba(0, 40, 40, 0.373);
+    padding: 20px;
+    height: 300px;
+    transition: 0.3s;
+}
+
+.outerElem > div > div:hover {
+    transform: scale(1.05);
+}
+
+.outerElem > div > div > img {
+    border-radius: 50%;
+}
+
+.outerElem > div > div {
+    text-align: center;
+}
+
+.outerElem > div > div > button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: none;
+    font-size: 20px;
+    background-color: rgb(0, 36, 36);
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+@media (max-width: 790px) {
+    .outerElem {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 450px) {
+    .outerElem {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.showDetails > div {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.showDetails > div > div {
+    position: relative;
+    margin-top: 50px;
+    height: 80%;
+    width: 50%;
+    text-align: center;
+    color: white;
+    background-color: rgb(0, 41, 41);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.showDetails > div > div > div > img {
+    height: 300px;
+}
+
+.showDetails > div > div > div > P{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-right: 20px;
+    margin-top: 20px;
+    font-size: 25px;
+    cursor: pointer;
+    
+}
