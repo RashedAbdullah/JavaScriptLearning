@@ -87,10 +87,16 @@ for (let i = 0; i < fiveDimArr.length; i++) {
 
 // Reverse array:
 let reverseArr = [1, 2, 3, 4, 5, 6, 7, 8];
-let reversed = [];
 for (let i = 0; i < reverseArr.length / 2; i++) {
   let temp = reverseArr[i];
   reverseArr[i] = reverseArr[reverseArr.length - 1 - i];
   reverseArr[reverseArr.length - 1 - i] = temp;
 }
+console.log(reverseArr);
+
+console.log(reverseArr.concat(arr));
+
+console.log(reverseArr);
+let rvrs = reverseArr;
+rvrs[2] = 200;
 console.log(reverseArr);
