@@ -76,3 +76,11 @@ function divide(div) {
 }
 
 divide(15);
+
+const arr = [
+  3,
+  (para) => console.log("This is array function" + " " + para),
+  23,
+];
+// This is way to call function of array
+arr[1]("Rashed");

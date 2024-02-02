@@ -102,3 +102,21 @@ console.log(reverseArr);
 let rvrs = Array.from(reverseArr);
 rvrs[2] = 200;
 console.log(rvrs);
+
+// forEach:
+const forEachArr = [3, 4, 3, 5, 3, 2];
+forEachArr.forEach((value, index, array) => {
+  console.log(value);
+});
+
+console.log("Break...");
+// Behind the seene:
+const forEachFunc = (value, cb) => {
+  for (let i = 0; i < value.length; i++) {
+    cb(value[i], i, value);
+  }
+};
+forEachFunc(reverseArr, (value, index, array) =>
+  console.log(value, index, array)
+);
+
