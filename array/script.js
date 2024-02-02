@@ -97,6 +97,8 @@ console.log(reverseArr);
 console.log(reverseArr.concat(arr));
 
 console.log(reverseArr);
-let rvrs = reverseArr;
+
+// it's cannot mute original array:
+let rvrs = Array.from(reverseArr);
 rvrs[2] = 200;
-console.log(reverseArr);
+console.log(rvrs);
