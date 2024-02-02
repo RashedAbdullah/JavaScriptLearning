@@ -46,3 +46,33 @@ function arg3() {
 }
 arg3(2, 3, 4, 3, 4, 5, 5, 3, 5, 5);
 arg3(4, 23, 53, 23, 45, 34, 23, 54);
+
+// Default argument:
+function defaultArg(name = "Rashed", age = 24) {
+  console.log(name, age);
+}
+defaultArg();
+defaultArg("Labib", 3);
+
+console.log("Rashed".split("")[0]);
+
+function nameArg(name) {
+  console.log(`Wellcome mr. ${name.split(" ")[0]}`);
+}
+nameArg("Rashed Abdullah Feni Bangladesh");
+
+function divide(div) {
+  function a() {
+    return div % 3 === 0;
+  }
+  function b() {
+    return div % 5 === 0;
+  }
+  if (a() && b()) {
+    console.log("This is you can divide by 3 and 5");
+  } else {
+    console.log("This number is not valid");
+  }
+}
+
+divide(15);
