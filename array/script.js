@@ -140,3 +140,5 @@ const sumOfArr = (arr) => {
 };
 console.log(sumOfArr([2, 34, 43, 43, 43]));
 
+console.log([2, 3, 5, 10].map((value, index) => value * 2));
+const testArr = [3, 3, 4].map((value, index) => console.log(value + index));

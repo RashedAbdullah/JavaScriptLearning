@@ -84,3 +84,17 @@ const arr = [
 ];
 // This is way to call function of array
 arr[1]("Rashed");
+
+// Two cb function for add and divition:
+function addAndDivideFunc(a, b, add, divide) {
+  return add(a, b), divide(a, b);
+}
+
+function addFunc(a, b) {
+  return a + b;
+}
+function divideFunc(a, b) {
+  return a - b;
+}
+
+console.log(addAndDivideFunc(7, 6, addFunc, divideFunc));
