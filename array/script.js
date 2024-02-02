@@ -120,3 +120,23 @@ forEachFunc(reverseArr, (value, index, array) =>
   console.log(value, index, array)
 );
 
+console.log("Break...");
+
+const oneMoreForEach = (arr, cb) => {
+  for (let i = 0; i < arr.length; i++) {
+    cb(arr[i], i, arr);
+  }
+};
+oneMoreForEach(arr, (value, i, arr) => {
+  console.log(value, i, arr);
+});
+
+const sumOfArr = (arr) => {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum;
+};
+console.log(sumOfArr([2, 34, 43, 43, 43]));
+
