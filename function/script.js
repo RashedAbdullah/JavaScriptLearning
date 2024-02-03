@@ -98,3 +98,11 @@ function divideFunc(a, b) {
 }
 
 console.log(addAndDivideFunc(7, 6, addFunc, divideFunc));
+
+const func1 = (fName) => {
+  return (lName) => {
+    return `${fName} ${lName}`;
+  };
+};
+
+console.log(func1("Rashed")("Abdullah")); // There is also have closure.

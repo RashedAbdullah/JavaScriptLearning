@@ -305,3 +305,9 @@ const myFamilyInfo = [
 ];
 console.log(myFamilyInfo);
 console.log([...myFamilyInfo].sort((a, b) => b.age - a.age));
+
+// Every and Some:
+console.log(
+  [3, 4, 3, 53, 34, 5, 34, 2, 2].every((value) => typeof value === "number")
+);
+console.log([3, 4, 3, 53, 34, 5, 34, 2, 2].some((value) => value % 2 === 0));
