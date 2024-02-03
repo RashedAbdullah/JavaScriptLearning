@@ -214,3 +214,13 @@ console.log(
     min[0]
   )
 );
+
+// Find:
+const findArr = [34, 43, 4, 45, 43].find((value) => value === 4);
+console.log(findArr);
+const findFunc = (arr, cb) => {
+  let index;
+  for (let i = 0; i < arr.length; i++) {
+    return cb(index, i, arr[i]);
+  }
+};
