@@ -106,3 +106,37 @@ const func1 = (fName) => {
 };
 
 console.log(func1("Rashed")("Abdullah")); // There is also have closure.
+
+// Recursive function:
+// function recursiveFunc(num) {
+//   if (num === 0) {
+//     return;
+//   }
+//   recursiveFunc(-1);
+// }
+
+// console.log(recursiveFunc(10));
+
+// Currying function:
+const curryingFunc = (a) => {
+  return (b) => {
+    return (c) => {
+      return a + b + c;
+    };
+  };
+};
+
+const result = curryingFunc(5)(5)(5);
+console.log(result);
+
+// Function composition:
+const print = (input) => {
+  console.log(input);
+};
+const multiply = (num) => {
+  return num * num;
+};
+const addComposition = (a, b) => {
+  return a + b;
+};
+print(multiply(addComposition(5, 1)));
