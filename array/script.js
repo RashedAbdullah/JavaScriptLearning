@@ -219,8 +219,89 @@ console.log(
 const findArr = [34, 43, 4, 45, 43].find((value) => value === 4);
 console.log(findArr);
 const findFunc = (arr, cb) => {
-  let index;
   for (let i = 0; i < arr.length; i++) {
-    return cb(index, i, arr[i]);
+    if (cb(arr[i])) return arr[i];
   }
 };
+
+console.log(
+  findFunc([3, 43, 54, 3, 4, 3], (value) => {
+    return value === 3;
+  })
+);
+
+// FindIndex:
+const findIndex = [3, 4, 3, 4, 5, 3, 5, 3];
+const findIndexFunc = (arr, cb) => {
+  for (let i = 0; i < arr.length; i++) {
+    if (cb(arr[i])) {
+      return i;
+    }
+  }
+};
+console.log(
+  findIndexFunc([32, 43, 2, 43, 6], (value) => {
+    return value === 6;
+  })
+);
+
+// sort:
+const myFamilyInfo = [
+  {
+    id: 1,
+    name: "Abdullah",
+    age: 60,
+  },
+  {
+    id: 2,
+    name: "Noman",
+    age: 35,
+  },
+  {
+    id: 3,
+    name: "Rabeya Akter",
+    age: 50,
+  },
+  {
+    id: 4,
+    name: "Labib",
+    age: 3,
+  },
+  {
+    id: 5,
+    name: "Rashed",
+    age: 24,
+  },
+  {
+    id: 6,
+    name: "Nafisa",
+    age: 22,
+  },
+  {
+    id: 7,
+    name: "Faruque",
+    age: 29,
+  },
+  {
+    id: 8,
+    name: "Irfan",
+    age: 32,
+  },
+  {
+    id: 9,
+    name: "Maryam",
+    age: 22,
+  },
+  {
+    id: 10,
+    name: "Ismat",
+    age: 1,
+  },
+  {
+    id: 11,
+    name: "Firadous",
+    age: 23,
+  },
+];
+console.log(myFamilyInfo);
+console.log([...myFamilyInfo].sort((a, b) => b.age - a.age));
