@@ -110,7 +110,7 @@ forEachArr.forEach((value, index, array) => {
 });
 
 console.log("Break...");
-// Behind the seene:
+// behind the scenes:
 const forEachFunc = (value, cb) => {
   for (let i = 0; i < value.length; i++) {
     cb(value[i], i, value);
@@ -142,3 +142,21 @@ console.log(sumOfArr([2, 34, 43, 43, 43]));
 
 console.log([2, 3, 5, 10].map((value, index) => value * 2));
 const testArr = [3, 3, 4].map((value, index) => console.log(value + index));
+
+// filter behind the scenes.
+const filtereFunc = (arr, cb) => {
+  let filteredArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (cb(arr[i], i, arr)) {
+      filteredArr.push(arr[i]);
+    }
+  }
+  return filteredArr;
+};
+
+console.log(
+  filtereFunc(arr, (value) => {
+    return value % 2 === 0;
+  })
+);
+console.log(filtereFunc(arr, (value) => value === 3));
