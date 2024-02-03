@@ -160,3 +160,57 @@ console.log(
   })
 );
 console.log(filtereFunc(arr, (value) => value === 3));
+
+const reduce = [5, 5, 5, 5].reduce((prev, crr) => {
+  return prev + crr;
+}, 0);
+console.log(reduce);
+const reduce2 = [5, 5, 5, 5].reduce((prev, crr) => {
+  return (prev += crr);
+}, 0);
+console.log(reduce2);
+
+// Maximum value with reducer:
+console.log(
+  [3, 5, 32, 5, 23, 3].reduce((prev, crr) => {
+    return Math.max(prev, crr);
+  })
+);
+
+// Reduce behind the scenes:
+const reduceFunc = (arr, cb, acc) => {
+  for (let i = 0; i < arr.length; i++) {
+    acc = cb(acc, arr[i], i, arr);
+  }
+  return acc;
+};
+console.log(
+  reduceFunc(
+    [4, 4],
+    (prev, crr) => {
+      return prev + crr;
+    },
+    0
+  )
+);
+
+console.log(
+  reduceFunc(
+    [3, 5, 2, 4, 54, 23],
+    (prev, crr) => {
+      return Math.max(prev, crr);
+    },
+    0
+  )
+);
+
+const min = [3, 5, 2, 4, 54, 23];
+console.log(
+  reduceFunc(
+    min,
+    (prev, crr) => {
+      return Math.min(prev, crr);
+    },
+    min[0]
+  )
+);
