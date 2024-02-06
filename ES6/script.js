@@ -12,7 +12,5 @@ function deafultPara(a, b) {
 
   return a + b;
 }
+console.log(deafultPara(20, 20));
 console.log(deafultPara());
-
-("بسم الله الرحمن الرحيم");
-console.log("Rashed Abdullah from jamia madania feni bangladesh");
