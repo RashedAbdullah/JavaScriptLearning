@@ -14,3 +14,11 @@ function deafultPara(a, b) {
 }
 console.log(deafultPara(20, 20));
 console.log(deafultPara());
+
+// Now:
+const deafultParameter = (a = 5, b = 10) => {
+  console.log();
+  return a + b;
+};
+console.log(deafultParameter());
+console.log(deafultParameter(20, 20));
