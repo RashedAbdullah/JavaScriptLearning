@@ -22,3 +22,33 @@ const deafultParameter = (a = 5, b = 10) => {
 };
 console.log(deafultParameter());
 console.log(deafultParameter(20, 20));
+
+// Rest operator:
+const restFunc = (...rest) => {
+  return rest.reduce((prev, crr) => (prev += crr));
+};
+
+console.log(restFunc(2, 1, 1, 1, 1));
+
+// Spread operator:
+const arr = ["Rashed", "Labib", "Ismat"];
+const [myName, newphewName, scndnewphew] = arr;
+console.log(newphewName);
+
+const obj = {
+  a: "Rashed",
+  b: "Labib",
+};
+const obj2 = {
+  ...obj,
+};
+
+const obj3 = obj;
+console.log(obj === obj2); //false
+console.log(obj === obj3); //true
+
+obj.a = "Ismat";
+console.log(obj2); //{a: 'Rashed', b: 'Labib'}
+
+const { a, b } = obj2;
+console.log(b); // Labib
