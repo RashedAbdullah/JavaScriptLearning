@@ -31,8 +31,11 @@ const restFunc = (...rest) => {
 console.log(restFunc(2, 1, 1, 1, 1));
 
 // Spread operator:
-const arr = ["Rashed", "Labib", "Ismat"];
-const [myName, newphewName, scndnewphew] = arr;
+const arr = ["Rashed", "Labib", "Ismat", "Mahmud", "Rakib"];
+console.log(...arr);
+
+// Destructuring array:
+const [myName, newphewName, scndnewphew /*ignor this*/, , Rakib] = arr;
 console.log(newphewName);
 
 const obj = {
@@ -50,5 +53,53 @@ console.log(obj === obj3); //true
 obj.a = "Ismat";
 console.log(obj2); //{a: 'Rashed', b: 'Labib'}
 
+// Destructuring object:
 const { a, b } = obj2;
 console.log(b); // Labib
+
+// Enhace object:
+let num1 = 5,
+  num2 = 10;
+const enhanceObj = {
+  num1,
+  num2,
+  func() {
+    console.log("This is also a function");
+  },
+};
+console.log(enhanceObj);
+enhanceObj.func();
+
+// mutli level object destrtucturing:
+const obj1 = {
+  fname: "Labib",
+  lname: "Irfan",
+  address: {
+    home: "Sonagazi",
+    city: "Feni",
+    more: {
+      sister: "Ismat",
+      brother: "No one",
+    },
+  },
+};
+const {
+  fname,
+  lname,
+  address: {
+    home,
+    city,
+    more: { sister, brother },
+  },
+} = obj1;
+console.log(sister);
+
+// array to object:
+const arrToObj = [
+  ["a", 10],
+  ["b", 20],
+];
+console.log(Object.fromEntries(arrToObj)); //{a: 10, b: 20}
+
+const symbol = Symbol("Rashed Abdullah");
+console.log(symbol);
