@@ -25,3 +25,4 @@ console.log(iterateStr.next());
 console.log(iterateStr.next()); //{value: 'd', done: false}
 console.log(iterateStr.next()); //{value: undefined, done: true}
 
+console.log(isIterable(arr));
